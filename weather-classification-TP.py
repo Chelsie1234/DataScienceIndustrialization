@@ -129,6 +129,7 @@ plt.tight_layout()
 plt.show()
 
 
+
 # # Prediction with pre-trained ResNet152V2 model
 
 # In[22]:
