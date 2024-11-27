@@ -23,11 +23,6 @@ jobs:
       - name: Verify downloaded file
         run: ls -l ./data
 
-      
-      - name: Copy model to Docker context
-        run: |
-          cp ./data/ResNet152V2-Weather-Classification-03.h5 ./data/
-
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
