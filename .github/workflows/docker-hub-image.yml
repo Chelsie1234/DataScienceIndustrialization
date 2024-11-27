@@ -18,9 +18,7 @@ jobs:
 
       - name: Download file from Google Drive
         run: |
-          mkdir -p ./data
-          gdown --id 12qU9yPeiv_Cg42Kbwad6_iugAjMFlrWw --output ./ResNet152V2-Weather-Classification-03.h5
-          ls -l ./data
+          gdown --id 12qU9yPeiv_Cg42Kbwad6_iugAjMFlrWw --output ./data/ResNet152V2-Weather-Classification-03.h5
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2

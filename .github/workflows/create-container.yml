@@ -27,10 +27,5 @@ jobs:
             -v ${{ github.workspace }}/output:/app/output \
             tarifasalma/dockerization-with-github-actions:latest
 
-      - name: Debug mounted volume
-        run: |
-          docker run \
-            -v ${{ github.workspace }}/data:/app/data \
-            tarifasalma/dockerization-with-github-actions:latest \
-            ls -l /app/data
+     
 
