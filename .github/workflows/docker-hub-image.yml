@@ -40,11 +40,9 @@ jobs:
           push: true
           tags: tarifasalma/dockerization-with-github-actions:latest
 
-       # Étape 8 : Tirer l'image Docker (facultatif, si vous voulez vérifier la construction)
       - name: Pull Docker image
         run: docker pull tarifasalma/dockerization-with-github-actions:latest
 
-     # Étape 9 : Lancer le conteneur Docker
       - name: Run Docker container with mounted volumes
         run: |
          docker run  \

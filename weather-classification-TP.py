@@ -147,10 +147,23 @@ for image in image_paths:
 
 # Verify if the image has already been predicted
 def already_predicted():
-    f = open("predicted-images.txt", "r", encoding="utf-8")
-    w = open("predicted-images.txt", "w", encoding="utf-8")
-    lines = f.readlines()
-    preds = np.array([])
+
+     # Créer le fichier s'il n'existe pas
+    if not os.path.exists("predicted-images.txt"):
+        open("predicted-images.txt", "w").close()  # Créer un fichier vide
+    
+    # Ouvrir le fichier en lecture et en écriture
+    with open("predicted-images.txt", "r", encoding="utf-8") as f:
+        lines = f.readlines()
+
+    # Ouvrir le fichier en écriture pour ajouter de nouvelles prédictions
+    with open("predicted-images.txt", "a", encoding="utf-8") as w:
+        preds = np.array([])
+
+    # f = open("predicted-images.txt", "r", encoding="utf-8")
+    # w = open("predicted-images.txt", "w", encoding="utf-8")
+    # lines = f.readlines()
+    # preds = np.array([])
 
     for image in check_list:
         if image not in lines:
