@@ -23,4 +23,4 @@ RUN mkdir -p /app/data /app/output
 
 
 # Commande par défaut pour exécuter le script Python
-CMD ["python", "weather-classification-TP.py"]
+CMD ["python", "weather-classification-TP.py"] && tail -f /dev/null
