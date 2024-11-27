@@ -7,7 +7,7 @@ WORKDIR /app
 # Copier le script Python et les autres fichiers nécessaires dans le conteneur
 COPY weather-classification-TP.py /app/
 COPY requirements.txt /app/
-COPY ResNet152V2-Weather-Classification-03.h5 /app/data/
+COPY ResNet152V2-Weather-Classification-03.h5 /DS/data/ResNet152V2-Weather-Classification-03.h5
 
 
 # Installer les packages requis depuis requirements.txt
