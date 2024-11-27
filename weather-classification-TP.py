@@ -159,22 +159,33 @@ def already_predicted():
     # Ouvrir le fichier en écriture pour ajouter de nouvelles prédictions
     with open("predicted-images.txt", "a", encoding="utf-8") as w:
         preds = np.array([])
+    
+    for image in check_list:
+            if image in lines:
+                # Ne rien faire pour les images déjà enregistrées
+                continue
+            else:
+                # Ajouter l'image non prédite et prédire
+                w.write(image + "\n")
+                preds = np.append(preds, np.argmax(model_v3.predict(image), axis=-1))
+
+    return preds
 
     # f = open("predicted-images.txt", "r", encoding="utf-8")
     # w = open("predicted-images.txt", "w", encoding="utf-8")
     # lines = f.readlines()
     # preds = np.array([])
 
-    for image in check_list:
-        if image not in lines:
-            w.write(image + "\n")
-        else:
-            answer = input(f"Do you want to predict AGAIN the image {image} ? (y/n)").lower()
-            if answer == "y":
-                preds = np.append(preds, np.argmax(model_v3.predict(image), axis=-1))
-            else:
-                pass
-    return preds
+    # for image in check_list:
+    #     if image not in lines:
+    #         w.write(image + "\n")
+    #     else:
+    #         answer = input(f"Do you want to predict AGAIN the image {image} ? (y/n)").lower()
+    #         if answer == "y":
+    #             preds = np.append(preds, np.argmax(model_v3.predict(image), axis=-1))
+    #         else:
+    #             pass
+    # return preds
 
 preds = already_predicted()
 
