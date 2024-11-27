@@ -153,10 +153,11 @@ def already_predicted():
         open("predicted-images.txt", "w").close()  # Créer un fichier vide
     
     with open("predicted-images.txt", "r", encoding="utf-8") as f:
-        lines = f.readlines()
+       lines = [line.strip() for line in f.readlines()]
+
+    preds = np.array([])
 
     with open("predicted-images.txt", "a", encoding="utf-8") as w:
-        preds = np.array([])
     
         for image in check_list:
                 if image in lines:
@@ -165,6 +166,10 @@ def already_predicted():
                 else:
                 # Ajouter l'image non prédite et prédire
                     w.write(image + "\n")
+                #Charger et prétraiter l'image avec load_image
+                    image_data = load_image(f"./data/{image}")  # Charger l'image depuis le chemin
+                    image_data = np.expand_dims(image_data, axis=0)
+
                     preds = np.append(preds, np.argmax(model_v3.predict(image), axis=-1))
 
     return preds
