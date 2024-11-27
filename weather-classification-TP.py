@@ -14,8 +14,6 @@ import numpy as np
 import pandas as pd
 from glob import glob
 from tqdm import tqdm
-import requests
-
 
 # Data
 from tensorflow.image import resize
@@ -135,22 +133,9 @@ plt.show()
 
 # In[22]:
 
-# Google Drive file ID
-file_id = "12qU9yPeiv_Cg42Kbwad6_iugAjMFlrWw"
-output_path = "./data/ResNet152V2-Weather-Classification-03.h5"
-
-# Google Drive download URL
-url = f"https://drive.google.com/uc?id={file_id}"
-
-# Download the file
-response = requests.get(url, stream=True)
-with open(output_path, "wb") as f:
-    for chunk in response.iter_content(chunk_size=8192):
-        if chunk:
-            f.write(chunk)
 
 # Load model
-model_v3 = load_model(output_path)
+model_v3 = load_model('./data/ResNet152V2-Weather-Classification-03.h5')
 
 
 # In[23]:

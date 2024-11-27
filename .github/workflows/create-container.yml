@@ -25,7 +25,5 @@ jobs:
           docker run  \
             -v ${{ github.workspace }}/data:/app/data \
             -v ${{ github.workspace }}/output:/app/output \
-            tarifasalma/dockerization-with-github-actions:latest bash -c "
-              pip install gdown && \
-              gdown https://drive.google.com/uc?id=12qU9yPeiv_Cg42Kbwad6_iugAjMFlrWw -O /app/data/ResNet152V2-Weather-Classification-03.h5 && \
-              python /app/weather-classification-TP.py"
+            tarifasalma/dockerization-with-github-actions:latest
+
