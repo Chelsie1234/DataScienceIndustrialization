@@ -94,7 +94,7 @@ def load_data(img_paths):
 # In[14]:
 
 
-image_paths = sorted(glob('/app/data/*.jpg'))
+image_paths = sorted(glob('./data/*.jpg'))
 print(f"Total Number of Images : {len(image_paths)}")
 
 
@@ -135,7 +135,7 @@ plt.show()
 
 
 # Load model
-model_v3 = load_model('/app/data/ResNet152V2-Weather-Classification-03.h5')
+model_v3 = load_model('./data/ResNet152V2-Weather-Classification-03.h5')
 
 
 # In[23]:
@@ -150,15 +150,20 @@ def already_predicted():
     f = open("predicted-images.txt", "r", encoding="utf-8")
     w = open("predicted-images.txt", "w", encoding="utf-8")
     lines = f.readlines()
+    preds = np.array([])
 
     for image in check_list:
         if image not in lines:
             w.write(image + "\n")
+        else:
+            answer = input(f"Do you want to predict AGAIN the image {image} ? (y/n)").lower()
+            if answer == "y":
+                preds = np.append(preds, np.argmax(model_v3.predict(image), axis=-1))
+            else:
+                pass
+    return preds
 
-already_predicted()
-
-# Make Predictions
-preds = np.argmax(model_v3.predict(images), axis=-1)
+preds = already_predicted()
 
 
 # # Result
@@ -167,7 +172,7 @@ preds = np.argmax(model_v3.predict(images), axis=-1)
 
 
 plt.figure(figsize=(15,20))
-for i, im in enumerate(images):
+for i, im in enumerate(preds):
 
     # Make Prediction
     pred = class_names[list(preds)[i]]
@@ -188,12 +193,12 @@ os.makedirs(output_dir, exist_ok=True)
 
 # Créer une liste de tuples (image_name, prediction_label)
 results = []
-for i, image_path in enumerate(image_paths):
+for i, image_path in enumerate(preds):
     image_name = os.path.basename(image_path)  # Obtenir le nom de l'image sans le chemin complet
     prediction_label = class_names[preds[i]]  # Utiliser le dictionnaire pour obtenir le label
     results.append((image_name, prediction_label))
 
-#Convertir les résultats en DataFrame pandas pour les sauvegarder en CSV
+# Convertir les résultats en DataFrame pandas pour les sauvegarder en CSV
 df_results = pd.DataFrame(results, columns=["image_name", "prediction_label"])
 
 # Générer un nom de fichier avec horodatage
