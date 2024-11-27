@@ -170,7 +170,7 @@ def already_predicted():
                     image_data = load_image(f"./data/{image}")  # Charger l'image depuis le chemin
                     image_data = np.expand_dims(image_data, axis=0)
 
-                    preds = np.append(preds, np.argmax(model_v3.predict(image), axis=-1))
+                    preds = np.append(preds, np.argmax(model_v3.predict(image_data), axis=-1))
 
     return preds
 
