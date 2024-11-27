@@ -129,7 +129,6 @@ plt.tight_layout()
 plt.show()
 
 
-
 # # Prediction with pre-trained ResNet152V2 model
 
 # In[22]:
@@ -141,6 +140,22 @@ model_v3 = load_model('./data/ResNet152V2-Weather-Classification-03.h5')
 
 # In[23]:
 
+# To keep only the name of each image
+check_list = []
+for image in image_paths:
+    check_list.append(image[7:])
+
+# Verify if the image has already been predicted
+def already_predicted():
+    f = open("predicted-images.txt", "r", encoding="utf-8")
+    w = open("predicted-images.txt", "w", encoding="utf-8")
+    lines = f.readlines()
+
+    for image in check_list:
+        if image not in lines:
+            w.write(image + "\n")
+
+already_predicted()
 
 # Make Predictions
 preds = np.argmax(model_v3.predict(images), axis=-1)
@@ -185,7 +200,7 @@ df_results = pd.DataFrame(results, columns=["image_name", "prediction_label"])
 timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
 output_file = os.path.join(output_dir, f"predictions_{timestamp}.csv")
 
-# Sauvegarder le DataFrame en CSV
+# Save the DataFrame into a CSV file
 df_results.to_csv(output_file, index=False)
 
 print(f"CSV file saved: {output_file}")
