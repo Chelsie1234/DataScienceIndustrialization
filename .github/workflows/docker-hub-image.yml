@@ -20,11 +20,14 @@ jobs:
         run: |
           gdown --id 12qU9yPeiv_Cg42Kbwad6_iugAjMFlrWw --output ./data/ResNet152V2-Weather-Classification-03.h5
 
+      - name: Verify downloaded file
+        run: ls -l ./data
+
       
       - name: Copy model to Docker context
         run: |
           cp ./data/ResNet152V2-Weather-Classification-03.h5 ./data/
-          
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
