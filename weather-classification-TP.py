@@ -94,7 +94,7 @@ def load_data(img_paths):
 # In[14]:
 
 
-image_paths = sorted(glob('./data/*.jpg'))
+image_paths = sorted(glob('/app/data/*.jpg'))
 print(f"Total Number of Images : {len(image_paths)}")
 
 
@@ -135,7 +135,7 @@ plt.show()
 
 
 # Load model
-model_v3 = load_model('./data/ResNet152V2-Weather-Classification-03.h5')
+model_v3 = load_model('/app/data/ResNet152V2-Weather-Classification-03.h5')
 
 
 # In[23]:
