@@ -202,7 +202,7 @@ preds = already_predicted()
 
 plt.figure(figsize=(15,20))
 # for i, im in enumerate(preds):
-for i, im in enumerate(check_list):
+for i, image_path in enumerate(check_list):
     im = load_image(f"./data/{image_path}")
     # # Make Prediction
     # pred = class_names[list(preds)[i]]
