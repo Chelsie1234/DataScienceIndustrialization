@@ -152,24 +152,24 @@ def already_predicted():
     if not os.path.exists("predicted-images.txt"):
         open("predicted-images.txt", "w").close()  # Créer un fichier vide
     
-    # Ouvrir le fichier en lecture et en écriture
     with open("predicted-images.txt", "r", encoding="utf-8") as f:
         lines = f.readlines()
 
-    # Ouvrir le fichier en écriture pour ajouter de nouvelles prédictions
     with open("predicted-images.txt", "a", encoding="utf-8") as w:
         preds = np.array([])
     
-    for image in check_list:
-            if image in lines:
+        for image in check_list:
+                if image in lines:
                 # Ne rien faire pour les images déjà enregistrées
-                continue
-            else:
+                    continue
+                else:
                 # Ajouter l'image non prédite et prédire
-                w.write(image + "\n")
-                preds = np.append(preds, np.argmax(model_v3.predict(image), axis=-1))
+                    w.write(image + "\n")
+                    preds = np.append(preds, np.argmax(model_v3.predict(image), axis=-1))
 
     return preds
+
+
 
     # f = open("predicted-images.txt", "r", encoding="utf-8")
     # w = open("predicted-images.txt", "w", encoding="utf-8")
