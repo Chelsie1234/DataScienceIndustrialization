@@ -201,10 +201,14 @@ preds = already_predicted()
 
 
 plt.figure(figsize=(15,20))
-for i, im in enumerate(preds):
+# for i, im in enumerate(preds):
+for i, im in enumerate(check_list):
+    im = load_image(f"./data/{image_path}")
+    # # Make Prediction
+    # pred = class_names[list(preds)[i]]
 
-    # Make Prediction
-    pred = class_names[list(preds)[i]]
+    pred = class_names[preds[i]]
+
     
     # Show Prediction
     plt.subplot(5,5,i+1)
@@ -222,7 +226,8 @@ os.makedirs(output_dir, exist_ok=True)
 
 # Créer une liste de tuples (image_name, prediction_label)
 results = []
-for i, image_path in enumerate(preds):
+for i, image_path in enumerate(check_list):
+# for i, image_path in enumerate(preds):
     image_name = os.path.basename(image_path)  # Obtenir le nom de l'image sans le chemin complet
     prediction_label = class_names[preds[i]]  # Utiliser le dictionnaire pour obtenir le label
     results.append((image_name, prediction_label))
