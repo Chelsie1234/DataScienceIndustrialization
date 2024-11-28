@@ -48,4 +48,4 @@ jobs:
          docker run \
            -v ${{ github.workspace }}/data:/app/data \
            -v ${{ github.workspace }}/output:/app/output \
-           tarifasalma/dockerization-with-github-actions:latest
+           tarifasalma/datascience_industrialization:latest
