@@ -38,7 +38,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: tarifasalma/dockerization-with-github-actions:latest
+          tags: tarifasalma/datascience_industrialization:latest
 
       - name: Pull Docker image
         run: docker pull tarifasalma/dockerization-with-github-actions:latest
