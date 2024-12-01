@@ -47,6 +47,6 @@ jobs:
       - name: Run Docker container with mounted volumes
         run: |
          docker run \
-           -v ${{ github.workspace }}/data:/app/data \
-           -v ${{ github.workspace }}/output:/app/output \
+           -v ${PWD}/data:/app/data \
+           -v ${PWD}/output:/app/output \
            tarifasalma/datascience_industrialization:latest
