@@ -140,14 +140,23 @@ By running the command ```pip freeze``` in your terminal, you should be able to 
 
 ## Quick Start
 
-**<U>Good to know</U>:**
+### Method 1:
 
-The following command will locally installed the Docker image in Docker Desktop but has it is really heavy (mostly because of the model) we will not go by this method. You can go directly to the 1.
+1. The following command will locally installed the Docker image in Docker Desktop but has it is really heavy (mostly because of the model) so you can wait or go directly to the method 2.
 
 ```docker pull tarifasalma/datascience_industrialization:latest```
 
-1. **Clone this repository.**
+2. To execute the container:
 
+```docker run --name container-datascience tarifasalma/datascience_industrialization:latest```
+
+3. To verify files that exist in the container (our predictions):
+
+```docker exec -it container-datascience ls -l /app/output```
+
+### Method 2:
+
+1. **Clone this repository.**
 
 2. **Open your terminal and go to your associated folder with the command ```cd```.**
 
