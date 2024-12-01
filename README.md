@@ -3,8 +3,6 @@ A project to industrialize a Data Science model through containerization. This p
 
 ## Table of contents
 
-## Table of Contents
-
 - [Project Description](#project-description)
   - [What does the project do?](#what-does-the-project-do)
   - [How does it work?](#how-does-it-work)
