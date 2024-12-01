@@ -158,41 +158,31 @@ def already_predicted():
     preds = np.array([])
 
     with open("predicted-images.txt", "a", encoding="utf-8") as w:
+
+        image_list = []
     
         for image in check_list:
                 if image in lines:
-                # Ne rien faire pour les images déjà enregistrées
-                    continue
+                    # Ne rien faire pour les images déjà enregistrées
+                    answer = input(f"Do you want to predict AGAIN the image {image} ? (y/n)").lower()
+                    if answer == "y":
+                        image_data = load_image(f"./data/{image}")  # Charger l'image depuis le chemin
+                        image_data = np.expand_dims(image_data, axis=0)
+                        preds = np.append(preds, np.argmax(model_v3.predict(image_data), axis=-1))
+                        image_list.append(image)
                 else:
-                # Ajouter l'image non prédite et prédire
+                    # Ajouter l'image non prédite et prédire
                     w.write(image + "\n")
-                #Charger et prétraiter l'image avec load_image
+                    # Charger et prétraiter l'image avec load_image
                     image_data = load_image(f"./data/{image}")  # Charger l'image depuis le chemin
                     image_data = np.expand_dims(image_data, axis=0)
 
                     preds = np.append(preds, np.argmax(model_v3.predict(image_data), axis=-1))
+                    image_list.append(image)
 
-    return preds
+    return preds, image_list
 
-
-
-    # f = open("predicted-images.txt", "r", encoding="utf-8")
-    # w = open("predicted-images.txt", "w", encoding="utf-8")
-    # lines = f.readlines()
-    # preds = np.array([])
-
-    # for image in check_list:
-    #     if image not in lines:
-    #         w.write(image + "\n")
-    #     else:
-    #         answer = input(f"Do you want to predict AGAIN the image {image} ? (y/n)").lower()
-    #         if answer == "y":
-    #             preds = np.append(preds, np.argmax(model_v3.predict(image), axis=-1))
-    #         else:
-    #             pass
-    # return preds
-
-preds = already_predicted()
+preds, image_list = already_predicted()
 
 
 # # Result
@@ -202,12 +192,10 @@ preds = already_predicted()
 
 plt.figure(figsize=(15,20))
 # for i, im in enumerate(preds):
-for i, image_path in enumerate(check_list):
+for i, image_path in enumerate(image_list):
     im = load_image(f"./data/{image_path}")
-    # # Make Prediction
-    # pred = class_names[list(preds)[i]]
-
-    pred = class_names[preds[i]]
+    # Make Prediction
+    pred = class_names[list(preds)[i]]
 
     
     # Show Prediction
@@ -226,10 +214,10 @@ os.makedirs(output_dir, exist_ok=True)
 
 # Créer une liste de tuples (image_name, prediction_label)
 results = []
-for i, image_path in enumerate(check_list):
+for i, image_path in enumerate(image_list):
 # for i, image_path in enumerate(preds):
     image_name = os.path.basename(image_path)  # Obtenir le nom de l'image sans le chemin complet
-    prediction_label = class_names[preds[i]]  # Utiliser le dictionnaire pour obtenir le label
+    prediction_label = class_names[list(preds)[i]]  # Utiliser le dictionnaire pour obtenir le label
     results.append((image_name, prediction_label))
 
 # Convertir les résultats en DataFrame pandas pour les sauvegarder en CSV
