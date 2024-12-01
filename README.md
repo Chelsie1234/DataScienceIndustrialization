@@ -81,60 +81,86 @@ Anyone who wants to use machine learning models without having to be a technical
 N.B.
 By running the command ```pip freeze``` in your terminal, you should be able to see the package versions. We have performed this project with the following packages and versions (if something doesn't work, think about upgrade to the same version as listed below):
 
+# Tool Versions
+
 <p align="center">
-  <a href="https://www.python.org" style="text-align: center; display: inline-block; margin: 10px;">
+  <a href="https://www.python.org">
     <img alt="Python" src="https://i0.wp.com/junilearning.com/wp-content/uploads/2020/06/python-programming-language.webp?fit=800%2C800&ssl=1" height="50" />
     <br />
-    <span style="font-size: small;">v3.12.0</span>
+    <sub>v3.12.0</sub>
   </a>
-  <a href="https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/" style="text-align: center; display: inline-block; margin: 10px;">
+  &nbsp;&nbsp;&nbsp;
+  <a href="https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/">
     <img alt="Virtualenv" src="https://www.cheatsheet.fr/wp-content/uploads/2019/09/python-virtual-environments.png" height="50" />
     <br />
-    <span style="font-size: small;">v20.27.1</span>
+    <sub>v20.27.1</sub>
   </a>
-  <a href="https://keras.io/" style="text-align: center; display: inline-block; margin: 10px;">
+  &nbsp;&nbsp;&nbsp;
+  <a href="https://keras.io/">
     <img alt="Keras" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Keras_logo.svg/1200px-Keras_logo.svg.png" height="50" />
     <br />
-    <span style="font-size: small;">v3.7.0</span>
+    <sub>v3.7.0</sub>
   </a>
-  <a href="https://numpy.org/" style="text-align: center; display: inline-block; margin: 10px;">
+  &nbsp;&nbsp;&nbsp;
+  <a href="https://numpy.org/">
     <img alt="Numpy" src="https://avatars.githubusercontent.com/u/288276?s=280&v=4" height="50" />
     <br />
-    <span style="font-size: small;">v2.0.2</span>
+    <sub>v2.0.2</sub>
   </a>
-  <a href="https://pandas.pydata.org/" style="text-align: center; display: inline-block; margin: 10px;">
+  &nbsp;&nbsp;&nbsp;
+  <a href="https://pandas.pydata.org/">
     <img alt="Pandas" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKPePf0eI9lrP20Ym-P0v-_B2yB6IHRoQiWw&s" height="50" />
     <br />
-    <span style="font-size: small;">v2.2.3</span>
+    <sub>v2.2.3</sub>
   </a>
 </p>
+
 <p align="center">
-  <a href="https://www.tensorflow.org/?hl=en" style="text-align: center; display: inline-block; margin: 10px;">
+  <a href="https://www.tensorflow.org/?hl=en">
     <img alt="TensorFlow" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Tensorflow_logo.svg/langfr-220px-Tensorflow_logo.svg.png" height="50" />
     <br />
-    <span style="font-size: small;">v2.18.0</span>
+    <sub>v2.18.0</sub>
   </a>
-  <a href="https://scikit-learn.org/stable/" style="text-align: center; display: inline-block; margin: 10px;">
+  &nbsp;&nbsp;&nbsp;
+  <a href="https://scikit-learn.org/stable/">
     <img alt="Scikit-learn" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Scikit_learn_logo_small.svg/800px-Scikit_learn_logo_small.svg.png" height="50" />
     <br />
-    <span style="font-size: small;">v1.5.2</span>
+    <sub>v1.5.2</sub>
   </a>
-  <a href="https://seaborn.pydata.org/" style="text-align: center; display: inline-block; margin: 10px;">
+  &nbsp;&nbsp;&nbsp;
+  <a href="https://seaborn.pydata.org/">
     <img alt="Seaborn" src="https://cdn.prod.website-files.com/60ec34540d013784844d2ee2/61fe97cb292d1f79de62e1d1_Seaborn%20-%20Bibliotheque%20Python.png" height="50" />
     <br />
-    <span style="font-size: small;">v0.13.2</span>
+    <sub>v0.13.2</sub>
   </a>
-  <a href="https://matplotlib.org/" style="text-align: center; display: inline-block; margin: 10px;">
+  &nbsp;&nbsp;&nbsp;
+  <a href="https://matplotlib.org/">
     <img alt="Matplotlib" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Created_with_Matplotlib-logo.svg/2048px-Created_with_Matplotlib-logo.svg.png" height="50" />
     <br />
-    <span style="font-size: small;">v3.9.2</span>
+    <sub>v3.9.2</sub>
   </a>
-  <a href="https://tqdm.github.io/" style="text-align: center; display: inline-block; margin: 10px;">
+  &nbsp;&nbsp;&nbsp;
+  <a href="https://tqdm.github.io/">
     <img alt="TQDM" src="https://avatars.githubusercontent.com/u/12731565?v=4" height="50" />
     <br />
-    <span style="font-size: small;">v4.67.1</span>
+    <sub>v4.67.1</sub>
   </a>
 </p>
+
+<p align="center">
+  <a href="https://www.docker.com/">
+    <img alt="Docker" src="https://logos-world.net/wp-content/uploads/2021/02/Docker-Emblem.png" height="50" />
+    <br />
+    <sub>Docker</sub>
+  </a>
+  &nbsp;&nbsp;&nbsp;
+  <a href="https://www.docker.com/">
+    <img alt="Docker Alt" src="https://miro.medium.com/v2/resize:fit:734/0*sCPc1Ib1zT0Lg1vi.png" height="50" />
+    <br />
+    <sub>Docker Alt</sub>
+  </a>
+</p>
+
 
 ## Quick Start
 
