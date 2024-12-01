@@ -50,3 +50,7 @@ jobs:
            -v ${PWD}/data:/app/data \
            -v ${PWD}/output:/app/output \
            tarifasalma/datascience_industrialization:latest
+           
+      - name: Inspect data and output directories in the container
+        run: |
+             docker run -v ${PWD}/data:/app/data -v ${PWD}/output:/app/output tarifasalma/datascience_industrialization:latest ls -l /app/data /app/output
