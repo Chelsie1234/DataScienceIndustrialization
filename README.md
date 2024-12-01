@@ -3,9 +3,20 @@ A project to industrialize a Data Science model through containerization. This p
 
 ## Table of contents
 
+## Table of Contents
+
 - [Project Description](#project-description)
-- [Technologies and Libraries Used](#technologies-and-libraries-used)
-- [Quick start](#quick-start)
+  - [What does the project do?](#what-does-the-project-do)
+  - [How does it work?](#how-does-it-work)
+  - [Extra Features](#extra-features)
+  - [Why is this useful?](#why-is-this-useful)
+  - [Who benefits from this?](#who-benefits-from-this)
+  - [Scopes of the Project](#scopes-of-the-project)
+- [Technologies, Libraries, and Language Used](#technologies-libraries-and-language-used)
+  - [Tool Versions](#tool-versions)
+- [Quick Start](#quick-start)
+  - [Method 1](#method-1)
+  - [Method 2](#method-2)
 - [Project Organization](#project-organization)
 - [Contributors](#contributors)
 
@@ -47,7 +58,7 @@ It makes complex machine learning models:
 ### Who benefits from this?
 Anyone who wants to use machine learning models without having to be a technical expert or spend hours setting up the environment.
 
-### So, we can say that this project have several valuable scopes:
+### Scopes of the Project:
 
 1. <U>End-to-End Deployment</U>:
 
