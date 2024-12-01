@@ -50,7 +50,15 @@ jobs:
            -v ${PWD}/data:/app/data \
            -v ${PWD}/output:/app/output \
            tarifasalma/datascience_industrialization:latest
+
            
+      - name: Change permissions for data and output directories
+        run: |
+             docker run -v ${PWD}/data:/app/data -v ${PWD}/output:/app/output \
+             tarifasalma/datascience_industrialization:latest chmod -R 777 /app/data /app/output
+   
+
       - name: Inspect data and output directories in the container
         run: |
-             docker run -v ${PWD}/data:/app/data -v ${PWD}/output:/app/output tarifasalma/datascience_industrialization:latest ls -l /app/data /app/output
+             docker run -v ${PWD}/data:/app/data -v ${PWD}/output:/app/output \
+             tarifasalma/datascience_industrialization:latest ls -l /app/data /app/output 
