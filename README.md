@@ -83,45 +83,31 @@ By running the command ```pip freeze``` in your terminal, you should be able to 
 
 <p align="center">
   <a href="https://www.python.org">
-    <span style="display: inline-block; text-align: center;">
-      <img src="https://i0.wp.com/junilearning.com/wp-content/uploads/2020/06/python-programming-language.webp?fit=800%2C800&ssl=1" alt="python" height="50" />
-      <br />
-      <span>v3.12.0</span>
-    </span>
+    <img src="https://i0.wp.com/junilearning.com/wp-content/uploads/2020/06/python-programming-language.webp?fit=800%2C800&ssl=1" alt="python" height="50" />
+    <br />v3.12.0
   </a>
   &nbsp;
   <a href="https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/">
-    <span style="display: inline-block; text-align: center;">
-      <img src="https://www.cheatsheet.fr/wp-content/uploads/2019/09/python-virtual-environments.png" alt="virtualenv" height="50" />
-      <br />
-      <span>v20.27.1</span>
-    </span>
+    <img src="https://www.cheatsheet.fr/wp-content/uploads/2019/09/python-virtual-environments.png" alt="virtualenv" height="50" />
+    <br />v20.27.1
   </a>
   &nbsp;
   <a href="https://keras.io/">
-    <span style="display: inline-block; text-align: center;">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Keras_logo.svg/1200px-Keras_logo.svg.png" alt="keras" height="50" />
-      <br />
-      <span>v3.7.0</span>
-    </span>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Keras_logo.svg/1200px-Keras_logo.svg.png" alt="keras" height="50" />
+    <br />v3.7.0
   </a>
   &nbsp;
   <a href="https://numpy.org/">
-    <span style="display: inline-block; text-align: center;">
-      <img src="https://avatars.githubusercontent.com/u/288276?s=280&v=4" alt="numpy" height="50" />
-      <br />
-      <span>v2.0.2</span>
-    </span>
+    <img src="https://avatars.githubusercontent.com/u/288276?s=280&v=4" alt="numpy" height="50" />
+    <br />v2.0.2
   </a>
   &nbsp;
   <a href="https://pandas.pydata.org/">
-    <span style="display: inline-block; text-align: center;">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKPePf0eI9lrP20Ym-P0v-_B2yB6IHRoQiWw&s" alt="pandas" height="50" />
-      <br />
-      <span>v2.2.3</span>
-    </span>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKPePf0eI9lrP20Ym-P0v-_B2yB6IHRoQiWw&s" alt="pandas" height="50" />
+    <br />v2.2.3
   </a>
 </p>
+
 <p align="center">
   <a href="https://www.tensorflow.org/?hl=en">
     <span style="display: inline-block; text-align: center;">
