@@ -13,7 +13,6 @@ A project to industrialize a Data Science model through containerization. This p
   - [Who benefits from this?](#who-benefits-from-this)
   - [Scopes of the Project](#scopes-of-the-project)
 - [Technologies, Libraries, and Language Used](#technologies-libraries-and-language-used)
-  - [Tool Versions](#tool-versions)
 - [Quick Start](#quick-start)
   - [Method 1](#method-1)
   - [Method 2](#method-2)
@@ -88,11 +87,6 @@ Anyone who wants to use machine learning models without having to be a technical
 
 
 ## Technologies, Libraries, and Language Used
-
-N.B.
-By running the command ```pip freeze``` in your terminal, you should be able to see the package versions. We have performed this project with the following packages and versions (if something doesn't work, think about upgrade to the same version as listed below):
-
-# Tool Versions
 
 <p align="center">
   <a href="https://www.python.org">
