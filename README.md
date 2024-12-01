@@ -135,8 +135,8 @@ Anyone who wants to use machine learning models without having to be a technical
     <img alt="Docker" src="https://logos-world.net/wp-content/uploads/2021/02/Docker-Emblem.png" height="50" />
   </a>
   &nbsp;
-  <a href="https://www.docker.com/">
-    <img alt="Docker 2" src="https://miro.medium.com/v2/resize:fit:734/0*sCPc1Ib1zT0Lg1vi.png" height="50" />
+  <a href="https://hub.docker.com/">
+    <img alt="Docker Hub" src="https://miro.medium.com/v2/resize:fit:734/0*sCPc1Ib1zT0Lg1vi.png" height="50" />
   </a>
 </p>
 
