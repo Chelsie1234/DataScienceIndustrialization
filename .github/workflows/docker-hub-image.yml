@@ -46,7 +46,10 @@ jobs:
 
       - name: Run Docker container with mounted volumes
         run: |
-         docker run -v ${PWD}/data:/app/data -v ${PWD}/output:/app/output \
+         docker run \
+         -v ${{ github.workspace }}/data:/app/data \
+         -v ${{ github.workspace }}/output:/app/output \
+         -e CUDA_VISIBLE_DEVICES="" \
          tarifasalma/datascience_industrialization:latest
 
 

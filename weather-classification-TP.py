@@ -44,6 +44,7 @@ from tensorflow.keras.utils import plot_model
 #datetime
 import os
 import datetime
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
 # Data and utilities
 
