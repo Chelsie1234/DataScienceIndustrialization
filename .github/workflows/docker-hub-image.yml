@@ -42,7 +42,7 @@ jobs:
           tags: tarifasalma/datascience_industrialization:latest
 
       - name: Pull Docker image
-        run: docker pull tarifasalma/dockerization-with-github-actions:latest
+        run: docker pull tarifasalma/datascience_industrialization:latest
 
       - name: Run Docker container with mounted volumes
         run: |
@@ -50,7 +50,7 @@ jobs:
          -v ${{ github.workspace }}/data:/app/data \
          -v ${{ github.workspace }}/output:/app/output \
          -e CUDA_VISIBLE_DEVICES="" \
-         tarifasalma/datascience_industrialization:latest
+         tarifasalma/datascience_industrialization
 
 
 
