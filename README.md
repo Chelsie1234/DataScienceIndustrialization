@@ -49,26 +49,26 @@ Anyone who wants to use machine learning models without having to be a technical
 
 ### So, we can say that this project have several valuable scopes:
 
-1. <u>End-to-End Deployment</u>:
+1. <U>End-to-End Deployment</U>:
 
     * This project transforms a local machine learning model into a fully-deployed, automated service that can be used by non-technical teams.
     * The containerized solution ensures easy portability, scalability, and reliability.
 
-2. <u>Predictive Insights</u>:
+2. <U>Predictive Insights</U>:
 
     * Automatically analyzes a directory of images and classifies them into weather categories.
     * Outputs results in a structured format (CSV), which can be used for downstream tasks like weather reporting, forecasting, or data visualization.
 
-3. <u>Automation</u>:
+3. <U>Automation</U>:
 
     * Automation using GitHub Actions ensures a streamlined deployment process.
 
-4. <u>Resilience in Real-Time Use</u>:
+4. <U>Resilience in Real-Time Use</U>:
 
     * Implements mechanisms to avoid re-processing already predicted images, saving computation time and improving efficiency.
     * Fault tolerance is achieved through clean and documented code and Docker orchestration.
 
-5. <u>Wide Usability</u>:
+5. <U>Wide Usability</U>:
 
     Can be extended for commercial use cases like:
     * Tourism (weather impact visualization for vacation planning).
@@ -140,7 +140,7 @@ By running the command ```pip freeze``` in your terminal, you should be able to 
 
 ## Quick Start
 
-**<u>Good to know</u>:**
+**<U>Good to know</U>:**
 
 The following command will locally installed the Docker image in Docker Desktop but has it is really heavy (mostly because of the model) we will not go by this method. You can go directly to the 1.
 
