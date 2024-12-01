@@ -45,12 +45,12 @@ from tensorflow.keras.utils import plot_model
 import os
 import datetime
 
-# # Data and utilities
+# Data and utilities
 
 # In[6]:
 
 
-# Cateories
+# Categories
 class_names = {0: 'cloudy', 1: 'foggy', 2: 'rainy', 3: 'shine', 4: 'sunrise'}
 
 
@@ -148,9 +148,9 @@ for image in image_paths:
 # Verify if the image has already been predicted
 def already_predicted():
 
-     # Créer le fichier s'il n'existe pas
+    # Create the file if it doesn't exist
     if not os.path.exists("predicted-images.txt"):
-        open("predicted-images.txt", "w").close()  # Créer un fichier vide
+        open("predicted-images.txt", "w").close()  # Create an empty file
     
     with open("predicted-images.txt", "r", encoding="utf-8") as f:
        lines = [line.strip() for line in f.readlines()]
@@ -159,22 +159,25 @@ def already_predicted():
 
     with open("predicted-images.txt", "a", encoding="utf-8") as w:
 
-        image_list = []
+        image_list = [] # List of predict image names
     
         for image in check_list:
                 if image in lines:
-                    # Ne rien faire pour les images déjà enregistrées
+                    # Ask the user if he wants to predict the image again
                     answer = input(f"Do you want to predict AGAIN the image {image} ? (y/n)").lower()
                     if answer == "y":
-                        image_data = load_image(f"./data/{image}")  # Charger l'image depuis le chemin
+                        # Load and preprocess the image with load_image
+                        image_data = load_image(f"./data/{image}")  # Load the image from the path since image is the name of the image
                         image_data = np.expand_dims(image_data, axis=0)
+
+                        # Make the prediction and append the result to the preds list
                         preds = np.append(preds, np.argmax(model_v3.predict(image_data), axis=-1))
                         image_list.append(image)
                 else:
-                    # Ajouter l'image non prédite et prédire
+                    # Add the non-predict image to the file and predict it
                     w.write(image + "\n")
-                    # Charger et prétraiter l'image avec load_image
-                    image_data = load_image(f"./data/{image}")  # Charger l'image depuis le chemin
+                    # Load and preprocess the image with load_image
+                    image_data = load_image(f"./data/{image}") # Load the image from the path since image is the name of the image
                     image_data = np.expand_dims(image_data, axis=0)
 
                     preds = np.append(preds, np.argmax(model_v3.predict(image_data), axis=-1))
@@ -191,7 +194,7 @@ preds, image_list = already_predicted()
 
 
 plt.figure(figsize=(15,20))
-# for i, im in enumerate(preds):
+
 for i, image_path in enumerate(image_list):
     im = load_image(f"./data/{image_path}")
     # Make Prediction
@@ -207,23 +210,22 @@ plt.tight_layout()
 plt.show()
 
 
-# Créer un répertoire de sortie s'il n'existe pas
+# Create an output directory if it doesn't exist
 output_dir = 'output'
 os.makedirs(output_dir, exist_ok=True)
 
 
-# Créer une liste de tuples (image_name, prediction_label)
+# Create a list of tuples (image_name, prediction_label)
 results = []
 for i, image_path in enumerate(image_list):
-# for i, image_path in enumerate(preds):
-    image_name = os.path.basename(image_path)  # Obtenir le nom de l'image sans le chemin complet
-    prediction_label = class_names[list(preds)[i]]  # Utiliser le dictionnaire pour obtenir le label
+    image_name = os.path.basename(image_path)  # Obtain the image name without the full path
+    prediction_label = class_names[list(preds)[i]]  # Use the dictionary to get the label
     results.append((image_name, prediction_label))
 
-# Convertir les résultats en DataFrame pandas pour les sauvegarder en CSV
+# Convert the results into a pandas DataFrame to save them into a CSV file
 df_results = pd.DataFrame(results, columns=["image_name", "prediction_label"])
 
-# Générer un nom de fichier avec horodatage
+# Generate a file name with a timestamp
 timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
 output_file = os.path.join(output_dir, f"predictions_{timestamp}.csv")
 
