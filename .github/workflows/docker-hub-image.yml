@@ -51,7 +51,15 @@ jobs:
          -v ${{ github.workspace }}/output:/app/output \
          -e CUDA_VISIBLE_DEVICES="-1" \
          tarifasalma/datascience_industrialization
-
+      
+      - name: List files in output directory
+        run: ls -l ${{ github.workspace }}/output
+       
+      - name: View predicted file content
+        run: |
+           # Find the latest prediction file based on timestamp
+           latest_file=$(ls -t ${{ github.workspace }}/output/predictions_*.csv | head -n 1)
+           cat $latest_file
 
 
       # - name: Change permissions for data and output directories
