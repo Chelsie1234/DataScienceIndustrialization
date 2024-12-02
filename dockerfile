@@ -18,7 +18,7 @@ COPY ./data/ResNet152V2-Weather-Classification-03.h5 /app/data/ResNet152V2-Weath
 RUN ls -l /app/data/ResNet152V2-Weather-Classification-03.h5
 
 # Installer les packages requis depuis requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r /app/requirements.txt
 
 
 # Désactiver CUDA si nécessaire

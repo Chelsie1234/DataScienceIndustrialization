@@ -49,7 +49,7 @@ jobs:
          docker run \
          -v ${{ github.workspace }}/data:/app/data \
          -v ${{ github.workspace }}/output:/app/output \
-         -e CUDA_VISIBLE_DEVICES="" \
+         -e CUDA_VISIBLE_DEVICES="-1" \
          tarifasalma/datascience_industrialization
 
 
