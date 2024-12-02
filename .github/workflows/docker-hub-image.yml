@@ -60,6 +60,16 @@ jobs:
            # Find the latest prediction file based on timestamp
            latest_file=$(ls -t ${{ github.workspace }}/output/predictions_*.csv | head -n 1)
            cat $latest_file
+      
 
+      - name: Commit and push the generated files
+        run: |
+             git config --global user.name "GitHub Actions"
+             git config --global user.email "actions@github.com"
+             git add ${{ github.workspace }}/output/*.csv
+             git commit -m "Add prediction CSV files"
+             git push origin main
+        env:
+             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
      
