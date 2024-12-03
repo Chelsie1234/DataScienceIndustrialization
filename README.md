@@ -165,18 +165,29 @@ Anyone who wants to use machine learning models without having to be a technical
 
 3. **Create a new virtual environment to handle the packages.**
 
-```pip install --upgrade pip virtualenv```<br>
-```python -m venv myvenv```
+```
+pip install --upgrade pip virtualenv
+```
+<br>
+```
+python -m venv myvenv
+```
 
 On Windows:
-```./myvenv/Scripts/activate```
+```
+./myvenv/Scripts/activate
+```
 
 On Unix/MacOS:
-```source .venv/bin/activate```
+```
+source .venv/bin/activate
+```
 
 4. **Open Docker Desktop and make sure that you are logged and that the Docker Engine is launched.**
 
-```docker build -t weather-classification .```
+```
+docker build -t weather-classification .
+```
 
 N.B. Can take time!
 If this command doesn't work, try to log out and then log in again.
