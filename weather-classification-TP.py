@@ -44,6 +44,7 @@ from tensorflow.keras.utils import plot_model
 #datetime
 import os
 import datetime
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
 # Data and utilities
 
@@ -233,3 +234,4 @@ output_file = os.path.join(output_dir, f"predictions_{timestamp}.csv")
 df_results.to_csv(output_file, index=False)
 
 print(f"CSV file saved: {output_file}")
+
