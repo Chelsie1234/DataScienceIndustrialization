@@ -38,14 +38,14 @@ jobs:
         with:
           context: .
           push: true
-          tags: tarifasalma/datascience_industrialization:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/datascience_industrialization:latest
 
       - name: Pull Docker image
-        run: docker pull tarifasalma/dockerization-with-github-actions:latest
+        run: docker pull ${{ secrets.DOCKER_USERNAME }}/dockerization-with-github-actions:latest
 
       - name: Run Docker container with mounted volumes
         run: |
          docker run \
            -v ${{ github.workspace }}/data:/app/data \
            -v ${{ github.workspace }}/output:/app/output \
-           tarifasalma/datascience_industrialization:latest
+           ${{ secrets.DOCKER_USERNAME }}/datascience_industrialization:latest
