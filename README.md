@@ -147,15 +147,21 @@ Anyone who wants to use machine learning models without having to be a technical
 
 1. The following command will locally installed the Docker image in Docker Desktop but has it is really heavy (mostly because of the model) so you can wait or go directly to the method 2.
 
-```docker pull tarifasalma/datascience_industrialization:latest```
+```
+docker pull tarifasalma/datascience_industrialization:latest
+```
 
 2. To execute the container:
 
-```docker run --name container-datascience tarifasalma/datascience_industrialization:latest```
+```
+docker run --name container-datascience tarifasalma/datascience_industrialization:latest
+```
 
 3. To verify files that exist in the container (our predictions):
 
-```docker exec -it container-datascience ls -l /app/output```
+```
+docker exec -it container-datascience ls -l /app/output
+```
 
 ### Method 2:
 
@@ -168,7 +174,6 @@ Anyone who wants to use machine learning models without having to be a technical
 ```
 pip install --upgrade pip virtualenv
 ```
-<br>
 ```
 python -m venv myvenv
 ```
