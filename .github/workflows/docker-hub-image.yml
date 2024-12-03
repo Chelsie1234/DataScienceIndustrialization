@@ -9,6 +9,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -20,7 +22,7 @@ jobs:
         run: |
           mkdir -p ./data
           gdown --id 12qU9yPeiv_Cg42Kbwad6_iugAjMFlrWw --output ./data/ResNet152V2-Weather-Classification-03.h5
-
+      
       - name: Verify downloaded file
         run: ls -l ./data
 
@@ -38,6 +40,7 @@ jobs:
         with:
           context: .
           push: true
+          platforms: linux/amd64,linux/arm64
           tags: ${{ secrets.DOCKER_USERNAME }}/datascience_industrialization:latest
 
       - name: Pull Docker image
@@ -46,6 +49,27 @@ jobs:
       - name: Run Docker container with mounted volumes
         run: |
          docker run \
-           -v ${{ github.workspace }}/data:/app/data \
-           -v ${{ github.workspace }}/output:/app/output \
-           ${{ secrets.DOCKER_USERNAME }}/datascience_industrialization:latest
+         -v ${{ github.workspace }}/data:/app/data \
+         -v ${{ github.workspace }}/output:/app/output \
+         -e CUDA_VISIBLE_DEVICES="-1" \
+         ${{ secrets.DOCKER_USERNAME }}/datascience_industrialization
+      
+      - name: List files in output directory
+        run: ls -l ${{ github.workspace }}/output
+       
+      - name: View predicted file content
+        run: |
+           # Find the latest prediction file based on timestamp
+           latest_file=$(ls -t ${{ github.workspace }}/output/predictions_*.csv | head -n 1)
+           cat $latest_file
+      
+
+      - name: Commit and push the generated files
+        run: |
+             git config --global user.name "GitHub Actions"
+             git config --global user.email "actions@github.com"
+             git add ${{ github.workspace }}/output/*.csv
+             git commit -m "Add prediction CSV files"
+             git push origin main
+        env:
+             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
